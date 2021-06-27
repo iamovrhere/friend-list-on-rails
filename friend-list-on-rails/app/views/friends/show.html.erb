@@ -1,29 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @friend.first_name %>
-</p>
+<div class="card" >
+  <div class="card-header", style="line-height: 2.5rem;">
+  <%= @friend.first_name %> <%= @friend.last_name %>
+  <%=
+    link_to 'Edit',
+    edit_friend_path(@friend),
+    class: "btn btn-primary",
+    style: "float: right"
+  %>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong>Email:</strong>
+      <%= @friend.email %>
+    </li>
+    <li class="list-group-item">
+      <strong>Phone:</strong>
+      <%= @friend.phone %>
+    </li>
+    <li class="list-group-item">
+      <strong>Twitter:</strong>
+      <%= @friend.twitter %>
+    </li>
+  </ul>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @friend.last_name %>
-</p>
+  <div class="card-body">
+    <%=
+      link_to 'Back',
+      friends_path,
+      class: "btn btn-secondary"
+    %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @friend.email %>
-</p>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @friend.phone %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @friend.twitter %>
-</p>
-
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>
+</div>
