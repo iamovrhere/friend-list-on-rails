@@ -1,0 +1,22 @@
+# From: https://docs.docker.com/samples/rails/
+version: "3.9"
+services:
+  #db:
+  #  image: postgres
+  #  volumes:
+  #    - ./tmp/db:/var/lib/postgresql/data
+  #  environment:
+  #    POSTGRES_PASSWORD: password
+  web:
+    build:
+      context: .
+      args:
+          - TARGET_APP=${TARGET_APP}
+          - TARGET_DIR=${TARGET_DIR}
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ${TARGET_DIR}:/${TARGET_APP}
+    ports:
+      - "127.0.0.1:3000:3000"
+    #depends_on:
+    #  - db
