@@ -25,6 +25,12 @@ Based on https://docs.docker.com/samples/rails/. Requires:
 
 You may need to run `sudo chown -R $USER:$USER *` to fix permissions if you create files within the container as root.
 
+## Notes
+
+* `rails s` - Starts rails server.
+* `rails routes` - Display all the routes/
+* `rails g controller home index` - Generators creates controller from template. Can be found at `http://localhost:3000/home/index`
+
 ## Future notes
 
 Since I'm developing in Docker, if I decide to do this again:
