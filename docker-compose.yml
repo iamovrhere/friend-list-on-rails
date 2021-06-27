@@ -1,12 +1,12 @@
 # From: https://docs.docker.com/samples/rails/
 version: "3.9"
 services:
-  #db:
-  #  image: postgres
-  #  volumes:
-  #    - ./tmp/db:/var/lib/postgresql/data
-  #  environment:
-  #    POSTGRES_PASSWORD: password
+  db:
+   image: postgres
+   volumes:
+     - ./tmp/db:/var/lib/postgresql/data
+   environment:
+     POSTGRES_PASSWORD: password
   web:
     build:
       context: .
@@ -18,5 +18,5 @@ services:
       - ${TARGET_DIR}:/${TARGET_APP}
     ports:
       - "127.0.0.1:3000:3000"
-    #depends_on:
-    #  - db
+    depends_on:
+     - db

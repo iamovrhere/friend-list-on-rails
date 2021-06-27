@@ -7,7 +7,7 @@ Things you may want to cover:
 
 * Ruby version - `ruby-2.7.3`/`Rails 6.1.4`
 
-* System dependencies
+* System dependencies - `postgres`
 
 * Configuration
 
