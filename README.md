@@ -27,17 +27,27 @@ You may need to run `sudo chown -R $USER:$USER *` to fix permissions if you crea
 
 ## Notes
 
-* `rails s` - Starts rails server.
-* `rails routes` - Display all the routes.
-* `erb` - Embeded Ruby.
-* `rails g controller home index` - Generators creates controller from template. Can be found at `http://localhost:3000/home/index`.
-* Start partials with `_` such as `_header.html.erb` then you can call `<%= render 'home/header' %>`
-* Links work as: `<%= link_to 'About Us', home_about_path, class:"nav-link" %>` where the paths are like your routes/controller; `home/about` -> `home_about` then `_path`. You can get this info from `rails routes`
+1. `rails s` - Starts rails server.
+1. `rails routes` - Display all the routes.
+1. `erb` - Embeded Ruby.
+1. `rails g controller home index` - Generators creates controller from template. Can be found at `http://localhost:3000/home/index`.
+1. Start partials with `_` such as `_header.html.erb` then you can call `<%= render 'home/header' %>`
+1. Links work as: `<%= link_to 'About Us', home_about_path, class:"nav-link" %>` where the paths are like your routes/controller; `home/about` -> `home_about` then `_path`. You can get this info from `rails routes`
     ```
     $ rails routes | grep home_about
                               home_about GET    /home/about(.:format)                                                                             home#about
     ```
-
+1. `rails g scaffold friend first_name:string last_name:string email:string phone:string twitter:string`
+    * Needs to be singular or will be forced singular.
+    * Review: https://guides.rubyonrails.org/v3.2/migrations.html#supported-types
+1. `rails db:migrate` - Runs the migrations.
+    ```
+    == 20210627175159 CreateFriends: migrating ====================================
+    -- create_table(:friends)
+      -> 0.0055s
+    == 20210627175159 CreateFriends: migrated (0.0057s) ===========================
+    ```
+1. `resources :friends` - Handles a bunch of sub-routes.
 
 ## Future notes
 
