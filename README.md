@@ -18,8 +18,9 @@ Based on https://docs.docker.com/samples/rails/. Requires:
 
 ### Setup
 
-1. Run `./run.sh` to start.
+1. Run `./run.sh` to start containers.
 1. Run `./dev.sh` to start interactive session.
+1. `entrypoint.sh` (or `rails s`) to serve Ruby.
 1. Access at `http://localhost:3000/`.
 1. To stop `docker-compose down`.
 
@@ -56,4 +57,6 @@ Since I'm developing in Docker, if I decide to do this again:
 To bootstrap without Gemfile, you need to disable some steps in entrypoint/Dockerfile/docker-compose.
 
 Then run `rails new friend-list-on-rails`.
+
+When setting up the database for the first time need to run `rake db:create`.
 

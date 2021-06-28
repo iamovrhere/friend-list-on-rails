@@ -19,7 +19,3 @@ is_installed docker-compose
 
 # docker-compose build
 docker-compose up
-  #--name learn-ruby-on-rails_web \
-  # --no-deps web
-  # --force \
-  # --database=postgresql

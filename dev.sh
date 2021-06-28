@@ -20,5 +20,6 @@ docker exec $CONTAINER adduser \
   --gecos "Developer" \
   --shell /bin/bash \
   -u $UID $DEV_USER || true
-docker exec -it $CONTAINER bash -c "echo '' && ruby --version && rails --version"
-docker exec -it $CONTAINER su $DEV_USER
+docker exec -it $CONTAINER bash -c "echo '' && ruby --version && rails --version" || true
+# Need to be root to handle some Gem stuff.
+docker exec -it $CONTAINER bash # su $DEV_USER
