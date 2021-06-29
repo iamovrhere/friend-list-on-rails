@@ -18,4 +18,5 @@ is_installed docker
 is_installed docker-compose
 
 # docker-compose build
+# TODO: Parameterize the development vs. production builds.
 docker-compose up

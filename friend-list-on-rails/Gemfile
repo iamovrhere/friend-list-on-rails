@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 # My packages
 gem 'pg', '~> 1.2', '>= 1.2.3'
+gem 'devise', '~> 4.8'
 # End my packages
 
 
