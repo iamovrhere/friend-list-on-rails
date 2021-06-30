@@ -3,3 +3,5 @@
 README.md
 run.sh
 dev.sh
+Dockerfile
+docker-compose.yml

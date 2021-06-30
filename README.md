@@ -18,9 +18,10 @@ Based on https://docs.docker.com/samples/rails/. Requires:
 
 ### Setup
 
-1. Run `./run.sh` to start containers.
+1. Run `./run.sh dev` to start container in development mode.
+    - If you wish to rebuild the images, run `./run.sh dev --build`
 1. Run `./dev.sh` to start interactive session.
-1. `entrypoint.sh` (or `rails s`) to serve Ruby.
+    - `entrypoint.sh` serves Ruby by default.
 1. Access at `http://localhost:3000/`.
 1. To stop `docker-compose down`.
 
