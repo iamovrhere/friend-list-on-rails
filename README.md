@@ -112,6 +112,8 @@ You may need to run `sudo chown -R $USER:$USER *` to fix permissions if you crea
     1. `friend_params` defines the params for the controller.
     1. `before_action` is very similar to Akelos.
 1. `<%= @friend.inspect =>` or indeed any object like `<%= object.inspect =>` lets you see the values.
+1. If you want to only generate the scaffold when the model exists:
+    - `rails g scaffold_controller friend_example`
 1. Next?
 
 ## Future notes

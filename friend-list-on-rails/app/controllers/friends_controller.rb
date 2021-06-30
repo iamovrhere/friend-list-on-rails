@@ -7,6 +7,20 @@ class FriendsController < ApplicationController
   def index
     if current_user.nil?
       redirect_to new_user_session_path
+    elsif params[:q]
+      query =  "%" + params[:q] + "%"
+      @friends = current_user.friends.where(
+        "first_name LIKE ? OR
+        last_name LIKE ? OR
+        email LIKE ? OR
+        phone LIKE ? OR
+        twitter LIKE ?",
+        query,
+        query,
+        query,
+        query,
+        query
+      )
     else
       #@friends = Friend.all
       @friends = current_user.friends
