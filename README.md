@@ -57,51 +57,51 @@ You may need to run `sudo chown -R $USER:$USER *` to fix permissions if you crea
     ```
 1. `resources :friends` - Handles a bunch of sub-routes.
 1. https://rubygems.org/ - Normally:
-  1.  Copy paste into `Gemfile` (`gem 'devise', '~> 4.8'`)
-  1. `bundle install` (Need to be root in container)
-  1. https://rubygems.org/gems/devise has more steps
-  1. `rails g devise:install`
-    ```
-    Running via Spring preloader in process 369
-          create  config/initializers/devise.rb
-          create  config/locales/devise.en.yml
-    ===============================================================================
+    1.  Copy paste into `Gemfile` (`gem 'devise', '~> 4.8'`)
+    1. `bundle install` (Need to be root in container)
+    1. https://rubygems.org/gems/devise has more steps
+    1. `rails g devise:install`
+        ```
+        Running via Spring preloader in process 369
+              create  config/initializers/devise.rb
+              create  config/locales/devise.en.yml
+        ===============================================================================
 
-    Depending on your application's configuration some manual setup may be required:
+        Depending on your application's configuration some manual setup may be required:
 
-      1. Ensure you have defined default url options in your environments files. Here
-        is an example of default_url_options appropriate for a development environment
-        in config/environments/development.rb:
+          1. Ensure you have defined default url options in your environments files. Here
+            is an example of default_url_options appropriate for a development environment
+            in config/environments/development.rb:
 
-          config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+              config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-        In production, :host should be set to the actual host of your application.
+            In production, :host should be set to the actual host of your application.
 
-        * Required for all applications. *
+            * Required for all applications. *
 
-      2. Ensure you have defined root_url to *something* in your config/routes.rb.
-        For example:
+          2. Ensure you have defined root_url to *something* in your config/routes.rb.
+            For example:
 
-          root to: "home#index"
+              root to: "home#index"
 
-        * Not required for API-only Applications *
+            * Not required for API-only Applications *
 
-      3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-        For example:
+          3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+            For example:
 
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
 
-        * Not required for API-only Applications *
+            * Not required for API-only Applications *
 
-      4. You can copy Devise views (for customization) to your app by running:
+          4. You can copy Devise views (for customization) to your app by running:
 
-          rails g devise:views
+              rails g devise:views
 
-        * Not required *
+            * Not required *
 
-    ===============================================================================
-    ```
+        ===============================================================================
+        ```
     1. `rails g devise:views`
     1. `rails g devise user` + `rails db:migrate`
 1. https://guides.rubyonrails.org/association_basics.html
