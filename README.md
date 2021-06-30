@@ -21,11 +21,17 @@ Based on https://docs.docker.com/samples/rails/. Requires:
 1. Run `./run.sh dev` to start container in development mode.
     - If you wish to rebuild the images, run `./run.sh dev --build`
 1. Run `./dev.sh` to start interactive session.
+    - `su developer` to become your HOST user (essential for permissions)
     - `entrypoint.sh` serves Ruby by default.
 1. Access at `http://localhost:3000/`.
-1. To stop `docker-compose down`.
+1. To stop `CTRL + C` or `docker-compose down`.
 
 You may need to run `sudo chown -R $USER:$USER *` to fix permissions if you create files within the container as root.
+
+## Recommended VSCode Plugins
+
+* `Ruby` - https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby
+* `Ruby Solargraph` - https://marketplace.visualstudio.com/items?itemName=castwide.solargraph
 
 ## Notes
 
@@ -98,6 +104,14 @@ You may need to run `sudo chown -R $USER:$USER *` to fix permissions if you crea
     ```
     1. `rails g devise:views`
     1. `rails g devise user` + `rails db:migrate`
+1. https://guides.rubyonrails.org/association_basics.html
+    - Associations are fairly similar to [PHP Akelos Framework](http://www.phpprogram.net/frameworks-in-php/akelos-php-framework/) framework, which makes sense since Akelos was intended to be a Rail port to PHP.
+    1. `rails g migration add_user_id_to_friends user_id:integer:index` && `rails db:migrate`
+    1. Much like Akelos, you can assign foreign key values in the controller like: `@friend.user_id = current_user.id`
+    1. Alternatively: `@friend = current_user.friends.build(friend_params)`
+    1. `friend_params` defines the params for the controller.
+    1. `before_action` is very similar to Akelos.
+1. `<%= @friend.inspect =>` or indeed any object like `<%= object.inspect =>` lets you see the values.
 1. Next?
 
 ## Future notes

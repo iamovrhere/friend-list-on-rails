@@ -1,7 +1,11 @@
-<h1>Editing Friend</h1>
-
-<%= render 'form', friend: @friend %>
-
+<div class="card" style="margin-bottom: 1rem;">
+  <h1 class="card-header card-title">
+    Editing Friend
+  </h1>
+  <div class="card-body">
+    <%= render 'form', friend: @friend %>
+  </div>
+</div>
 
 <%=
   link_to 'Back',
