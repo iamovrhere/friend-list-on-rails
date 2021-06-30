@@ -5,33 +5,40 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
+      <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Twitter</th>
-      <th scope="col" >Actions</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <% @friends.each_with_index do |friend, index| %>
       <tr>
         <th scope="row"> <%= index + 1 %> </th>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
+        <td>
+          <%=
+            link_to friend.first_name + ' ' + friend.last_name,
+            friend,
+            class: "btn-lg btn-link"
+          %>
+        </td>
         <td><%= friend.email %></td>
         <td><%= friend.phone %></td>
         <td><%= friend.twitter %></td>
-        <td>
-          <%= link_to 'View', friend, class: "btn btn-primary" %>
-          <%= link_to 'Edit', edit_friend_path(friend), class: "btn btn-primary"  %>
+        <td style="text-align: right;">
+          <%= link_to '✏️',
+            edit_friend_path(friend),
+            class: "btn-sm btn-outline-primary"
+          %>
           <%=
-            link_to 'Delete',
+            link_to '🗑',
             friend, method: :delete,
             data: { confirm: 'Are you sure?' },
-            class: "btn btn-danger"
+            class: "btn-sm btn-outline-danger"
           %>
         </td>
+
       </tr>
     <% end %>
   </tbody>

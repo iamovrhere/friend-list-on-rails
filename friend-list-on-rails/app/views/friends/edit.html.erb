@@ -17,4 +17,10 @@
   @friend,
   class: "btn btn-secondary"
 %>
+<%=
+  link_to 'Delete',
+  @friend, method: :delete,
+  data: { confirm: 'Are you sure?' },
+  class: "btn btn-danger"
+%>
 

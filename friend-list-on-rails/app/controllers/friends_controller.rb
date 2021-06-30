@@ -1,12 +1,16 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: []
+  before_action :authenticate_user!, except: [:index]
   before_action :is_authorized, only: [ :edit, :update, :destroy ]
 
   # GET /friends or /friends.json
   def index
-    #@friends = Friend.all
-    @friends = current_user.friends
+    if current_user.nil?
+      redirect_to new_user_session_path
+    else
+      #@friends = Friend.all
+      @friends = current_user.friends
+    end
   end
 
   # GET /friends/1 or /friends/1.json
