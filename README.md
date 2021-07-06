@@ -1,10 +1,10 @@
 # Friend List on Rails
 
-The actual app is inside the [`friend-list-on-rails`](./friend-list-on-rails) directory. Based on the video ["Learn Ruby on Rails - Full Course" by  freeCodeCamp.org](https://www.youtube.com/watch?v=fmyvWz5TUWg).
+The ruby code is inside the [`friend-list-on-rails`](./friend-list-on-rails) directory.
 
-A quick crash course to get me clued into Ruby on Rails before applying to a company I'm interested in.
+The docker file & scripts are a docker-compose wrapper so I have a clean, portable, stable environment to work with.
 
-The docker file + scripts are just a docker compose wrapper so I have a clean environment to work with.
+A quick crash course to get me clued into Ruby on Rails before digging into it more. Based on the video ["Learn Ruby on Rails - Full Course" by  freeCodeCamp.org](https://www.youtube.com/watch?v=fmyvWz5TUWg).
 
 ## Installation
 
